@@ -43,7 +43,7 @@ const Header = () => {
   return (
     <header
       className={cn(
-        "bg-primary text-primary-foreground fixed top-0 left-0 right-0 z-50 shadow-md transition-transform duration-300",
+        "bg-primary text-primary-foreground sticky top-0 z-50 shadow-md transition-transform duration-300",
         hidden && "-translate-y-full"
       )}
     >

@@ -1,4 +1,6 @@
 import React from "react";
+import Header from "@/components/Header";
+import Footer from "@/components/Footer";
 import { MapPin, Calendar, Users, Layers, Award, PlusCircle, ArrowRight, Mail } from "lucide-react";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";

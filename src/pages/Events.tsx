@@ -1,4 +1,6 @@
 import React, { useState } from "react";
+import Header from "@/components/Header";
+import Footer from "@/components/Footer";
 import { Calendar, MapPin, Clock, Mail, CalendarDays, ArrowRight, BookOpen, Sparkles } from "lucide-react";
 import { Button } from "@/components/ui/button";
 

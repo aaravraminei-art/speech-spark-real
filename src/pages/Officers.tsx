@@ -1,4 +1,6 @@
 import React from "react";
+import Header from "@/components/Header";
+import Footer from "@/components/Footer";
 import { User, Shield, Briefcase, Mail, ArrowRight } from "lucide-react";
 import { Button } from "@/components/ui/button";
 

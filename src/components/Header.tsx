@@ -41,7 +41,12 @@ const Header = () => {
     );
 
   return (
-    <header className="bg-primary text-primary-foreground sticky top-0 z-50 shadow-md">
+    <header
+      className={cn(
+        "bg-primary text-primary-foreground fixed top-0 left-0 right-0 z-50 shadow-md transition-transform duration-300",
+        hidden && "-translate-y-full"
+      )}
+    >
       {/* Top bar */}
       <div className="border-b border-primary-foreground/10">
         <div className="container-custom section-padding !py-2 flex items-center justify-between gap-2 text-sm">

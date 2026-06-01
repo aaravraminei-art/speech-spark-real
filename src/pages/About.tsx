@@ -1,4 +1,6 @@
 import React from "react";
+import Header from "@/components/Header";
+import Footer from "@/components/Footer";
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Shield, Target, Users, Landmark, ArrowRight, Mail } from "lucide-react";
@@ -6,7 +8,7 @@ import { Button } from "@/components/ui/button";
 
 const AboutPage = () => {
   return (
-    <div className="min-h-screen bg-background text-foreground">
+    <div className="min-h-screen bg-background text-foreground flex flex-col">
       {/* 1. Hero Section */}
       <section className="relative pt-24 pb-16 md:pt-32 md:pb-24 border-b border-border/40 overflow-hidden">
         <div className="container px-4 mx-auto text-center max-w-4xl">

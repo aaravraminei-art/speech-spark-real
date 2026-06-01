@@ -1,4 +1,6 @@
 import React from "react";
+import Header from "@/components/Header";
+import Footer from "@/components/Footer";
 import { User, Shield, Briefcase, Mail, ArrowRight } from "lucide-react";
 import { Button } from "@/components/ui/button";
 
@@ -33,8 +35,10 @@ const OfficersPage = () => {
   };
 
   return (
-    <div className="min-h-screen bg-background text-foreground">
-      {/* Page Hero */}
+    <div className="min-h-screen bg-background text-foreground flex flex-col">
+      <Header />
+      <main className="flex-1">
+        {/* Page Hero */}
       <section className="pt-24 pb-12 md:pt-32 md:pb-16 text-center border-b border-border/40">
         <div className="container px-4 mx-auto max-w-3xl">
           <span className="inline-flex items-center gap-1.5 px-3 py-1 text-xs font-bold tracking-wider uppercase bg-accent/10 text-accent rounded-full mb-6 border border-accent/20">
@@ -145,35 +149,8 @@ const OfficersPage = () => {
 
         </div>
       </section>
-
-      {/* Global Page Footer */}
-      <footer className="bg-muted/40 border-t border-border/60 py-12">
-        <div className="container px-4 mx-auto max-w-4xl">
-          <div className="grid grid-cols-1 md:grid-cols-12 gap-8 items-start">
-            <div className="md:col-span-6 space-y-3">
-              <h3 className="text-xl font-bold font-display text-foreground">
-                Speech<span className="text-accent">Spark</span>
-              </h3>
-              <p className="text-sm text-muted-foreground max-w-sm leading-relaxed">
-                A student-led nonprofit empowering middle schoolers to discover the power of their voice through public speaking education.
-              </p>
-            </div>
-            <div className="md:col-span-3 space-y-3">
-              <h4 className="text-xs font-bold uppercase tracking-wider text-foreground">Get Involved</h4>
-              <ul className="space-y-2 text-sm text-muted-foreground">
-                <li><a href="https://forms.gle/QuUSh2uAfCKc61mD6" target="_blank" rel="noopener noreferrer" className="hover:text-accent transition-colors">Start a Chapter</a></li>
-                <li><a href="https://docs.google.com/forms/d/e/1FAIpQLSctVPQXMNjukjRq4yW74_3fAGznTeCJLipxUFQ9odL3Wd5j6Q/viewform?usp=sharing" target="_blank" rel="noopener noreferrer" className="hover:text-accent transition-colors">Volunteer</a></li>
-              </ul>
-            </div>
-            <div className="md:col-span-3 space-y-3">
-              <h4 className="text-xs font-bold uppercase tracking-wider text-foreground">Contact</h4>
-              <a href="mailto:speechsparknova@gmail.com" className="text-sm text-muted-foreground hover:text-accent transition-colors flex items-center gap-1.5">
-                <Mail className="h-4 w-4" /> speechsparknova@gmail.com
-              </a>
-            </div>
-          </div>
-        </div>
-      </footer>
+      </main>
+      <Footer />
     </div>
   );
 };

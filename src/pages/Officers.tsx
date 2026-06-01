@@ -35,7 +35,7 @@ const OfficersPage = () => {
   };
 
   return (
-    <div className="min-h-screen bg-background text-foreground">
+    <div className="min-h-screen bg-background text-foreground flex flex-col">
       {/* Page Hero */}
       <section className="pt-24 pb-12 md:pt-32 md:pb-16 text-center border-b border-border/40">
         <div className="container px-4 mx-auto max-w-3xl">

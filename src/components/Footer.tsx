@@ -64,7 +64,7 @@ const Footer = () => {
               </a>
               <a href="mailto:fill-in-email@example.com" className="flex items-center gap-3 text-sm hover:text-accent transition-colors">
                 <Mail className="h-4 w-4" />
-                FILL IN EMAIL HERE
+                speechsparknova@gmail.com
               </a>
               <div className="flex items-start gap-3 text-sm text-primary-foreground/75">
                 <MapPin className="h-4 w-4 mt-0.5 flex-shrink-0" />

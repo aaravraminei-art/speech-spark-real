@@ -36,7 +36,9 @@ const OfficersPage = () => {
 
   return (
     <div className="min-h-screen bg-background text-foreground flex flex-col">
-      {/* Page Hero */}
+      <Header />
+      <main className="flex-1">
+        {/* Page Hero */}
       <section className="pt-24 pb-12 md:pt-32 md:pb-16 text-center border-b border-border/40">
         <div className="container px-4 mx-auto max-w-3xl">
           <span className="inline-flex items-center gap-1.5 px-3 py-1 text-xs font-bold tracking-wider uppercase bg-accent/10 text-accent rounded-full mb-6 border border-accent/20">

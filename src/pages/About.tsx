@@ -11,7 +11,7 @@ const AboutPage = () => {
       <Header />
       <main className="flex-1">
         
-        {/* 1. Hero Section (Cleaned up the oval pill tag here) */}
+        {/* 1. Hero Section */}
         <section className="relative pt-28 pb-16 md:pt-36 md:pb-24 border-b border-border/40 overflow-hidden">
           <div className="container px-4 mx-auto text-center max-w-4xl">
             <h1 className="text-4xl sm:text-5xl font-extrabold font-display tracking-tight text-foreground mb-6 leading-tight">
@@ -41,15 +41,15 @@ const AboutPage = () => {
         <section className="py-16 md:py-24">
           <div className="container px-4 mx-auto max-w-5xl">
             <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
-              {/* Visual Side Block */}
-              <div className="lg:col-span-5 order-last lg:order-first">
-                <div className="relative rounded-2xl border border-border bg-gradient-to-br from-muted/50 to-muted p-8 text-center flex flex-col justify-center items-center min-h-[300px] shadow-sm">
-                  <div className="text-4xl md:text-5xl font-black tracking-tighter font-display text-foreground leading-none mb-4">
-                    Find Your<br />Voice.
-                  </div>
-                  <div className="text-sm font-semibold text-muted-foreground bg-background px-4 py-1.5 rounded-full border border-border/60">
-                    Student-led • Free • Northern Virginia
-                  </div>
+              
+              {/* ⚡️ UPDATED: Replaced "Find Your Voice" text with your official flyer image */}
+              <div className="lg:col-span-5 order-last lg:order-first flex justify-center">
+                <div className="relative rounded-2xl border border-border bg-card overflow-hidden shadow-md max-w-sm w-full transition-transform hover:scale-[1.01]">
+                  <img 
+                    src="/speech-spark-logo.jpg" 
+                    alt="Speech Spark - Debate, Speech, Communication Logo Flyer" 
+                    className="w-full h-auto object-cover display:block"
+                  />
                 </div>
               </div>
 

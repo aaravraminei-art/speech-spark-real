@@ -10,12 +10,12 @@ const OfficersPage = () => {
   // ==========================================================
   const executiveBoard = [
     { name: "Akshay Chapuri", role: "President", image: "" },
-    { name: "Nihal Boji", role: "Vice President", image: "" },
+    { name: "Nihal Bojji", role: "Vice President", image: "" },
     { name: "Avi Varma", role: "Director of Education", image: "" },
     { name: "Gautham Sivaraj", role: "Director of Outreach", image: "" },
     { name: "Viren Darisi", role: "Director of Finance", image: "" },
     { name: "Arjun Shreyas Karthikeyan", role: "Director of Media", image: "" },
-    { name: "Siddhu Surapeneni", role: "Director of Logistics", image: "" }
+    { name: "Siddharth Surapeneni", role: "Director of Logistics", image: "" }
   ];
 
   const regionalManagers = [

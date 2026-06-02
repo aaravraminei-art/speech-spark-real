@@ -10,6 +10,7 @@ import Events from "./pages/Events";
 import Chapters from "./pages/Chapters";
 import FAQ from "./pages/FAQ";
 import NotFound from "./pages/NotFound";
+import ScrollReveal from "./components/ScrollReveal";
 
 const queryClient = new QueryClient();
 
@@ -19,6 +20,7 @@ const App = () => (
       <Toaster />
       <Sonner />
       <BrowserRouter>
+        <ScrollReveal />
         <Routes>
           <Route path="/" element={<Index />} />
           <Route path="/about" element={<About />} />

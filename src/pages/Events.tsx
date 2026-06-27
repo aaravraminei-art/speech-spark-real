@@ -211,13 +211,20 @@ const EventsPage = () => {
               {pastEvents.length > 0 ? (
                 // Past events render exactly the same layout if added to the array
                 pastEvents.map((event, idx) => (
-                  <div key={idx} className="flex flex-col md:flex-row bg-card rounded-2xl border border-border shadow-sm overflow-hidden opacity-80">
-                    <div className="bg-muted/40 md:w-44 flex flex-col justify-center items-center p-6 text-center border-b md:border-b-0 md:border-r border-border min-w-[150px]">
-                      <span className="text-xs font-black text-muted-foreground uppercase">{event.month}</span>
-                      <span className="text-3xl font-black font-display tracking-tight text-muted-foreground my-1">{event.day}</span>
-                      <span className="text-xs font-semibold text-muted-foreground tracking-wider">{event.year}</span>
+                  <div key={idx} className="flex flex-col md:flex-row bg-card rounded-2xl border border-border shadow-sm overflow-hidden opacity-90">
+                    <div className="md:w-56 bg-muted/40 flex items-center justify-center border-b md:border-b-0 md:border-r border-border min-h-[180px]">
+                      {event.image ? (
+                        <img src={event.image} alt={event.title} className="w-full h-full object-cover" />
+                      ) : (
+                        <div className="flex flex-col items-center text-center p-6">
+                          <span className="text-xs font-black text-muted-foreground uppercase">{event.month}</span>
+                          <span className="text-3xl font-black font-display tracking-tight text-muted-foreground my-1">{event.day}</span>
+                          <span className="text-xs font-semibold text-muted-foreground tracking-wider">{event.year}</span>
+                        </div>
+                      )}
                     </div>
                     <div className="flex-1 p-6 md:p-8 space-y-2">
+                      <span className="text-xs font-bold text-accent uppercase tracking-wider">{event.month} {event.day}, {event.year}</span>
                       <h3 className="text-xl font-bold text-foreground">{event.title}</h3>
                       <p className="text-sm text-muted-foreground">{event.description}</p>
                     </div>

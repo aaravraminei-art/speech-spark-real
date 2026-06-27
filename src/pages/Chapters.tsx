@@ -15,7 +15,14 @@ const ChaptersPage = () => {
       location: "Ashburn, Virginia",
       meetings: "Meets regularly during the school year. Check the Events page for upcoming dates.",
       openTo: "Students in grades 4–9",
-      activities: ["Speech Workshops", "Internal Showcases", "Peer Coaching", "Debate Practice", "Impromptu Speaking"]
+      activities: ["Speech Workshops", "Internal Showcases", "Peer Coaching", "Debate Practice", "Impromptu Speaking"],
+      joinFormLink: "https://forms.gle/QuUSh2uAfCKc61mD6",
+      members: [
+        { name: "Member Name", image: "" },
+        { name: "Member Name", image: "" },
+        { name: "Member Name", image: "" },
+        { name: "Member Name", image: "" }
+      ]
     },
     {
       id: "02",
@@ -23,7 +30,14 @@ const ChaptersPage = () => {
       location: "South Riding, Virginia",
       meetings: "Meets regularly during the school year. Check the Events page for upcoming dates.",
       openTo: "Students in grades 4–9",
-      activities: ["Speech Workshops", "Internal Showcases", "Peer Coaching", "Debate Practice", "Impromptu Speaking"]
+      activities: ["Speech Workshops", "Internal Showcases", "Peer Coaching", "Debate Practice", "Impromptu Speaking"],
+      joinFormLink: "https://forms.gle/QuUSh2uAfCKc61mD6",
+      members: [
+        { name: "Member Name", image: "" },
+        { name: "Member Name", image: "" },
+        { name: "Member Name", image: "" },
+        { name: "Member Name", image: "" }
+      ]
     },
     {
       id: "03",
@@ -31,7 +45,14 @@ const ChaptersPage = () => {
       location: "Chantilly, Virginia",
       meetings: "Meets regularly during the school year. Check the Events page for upcoming dates.",
       openTo: "Students in grades 4–9",
-      activities: ["Speech Workshops", "Internal Showcases", "Peer Coaching", "Debate Practice", "Impromptu Speaking"]
+      activities: ["Speech Workshops", "Internal Showcases", "Peer Coaching", "Debate Practice", "Impromptu Speaking"],
+      joinFormLink: "https://forms.gle/QuUSh2uAfCKc61mD6",
+      members: [
+        { name: "Member Name", image: "" },
+        { name: "Member Name", image: "" },
+        { name: "Member Name", image: "" },
+        { name: "Member Name", image: "" }
+      ]
     },
     {
       id: "04",
@@ -39,10 +60,31 @@ const ChaptersPage = () => {
       location: "McLean, Virginia",
       meetings: "Meets regularly during the school year. Check the Events page for upcoming dates.",
       openTo: "Students in grades 4–9",
-      activities: ["Speech Workshops", "Internal Showcases", "Peer Coaching", "Debate Practice", "Impromptu Speaking"]
+      activities: ["Speech Workshops", "Internal Showcases", "Peer Coaching", "Debate Practice", "Impromptu Speaking"],
+      joinFormLink: "https://forms.gle/QuUSh2uAfCKc61mD6",
+      members: [
+        { name: "Member Name", image: "" },
+        { name: "Member Name", image: "" },
+        { name: "Member Name", image: "" },
+        { name: "Member Name", image: "" }
+      ]
+    },
+    {
+      id: "05",
+      name: "Herndon",
+      location: "Herndon, Virginia",
+      meetings: "Meets regularly during the school year. Check the Events page for upcoming dates.",
+      openTo: "Students in grades 4–9",
+      activities: ["Speech Workshops", "Internal Showcases", "Peer Coaching", "Debate Practice", "Impromptu Speaking"],
+      joinFormLink: "https://forms.gle/QuUSh2uAfCKc61mD6",
+      members: [
+        { name: "Member Name", image: "" },
+        { name: "Member Name", image: "" },
+        { name: "Member Name", image: "" },
+        { name: "Member Name", image: "" }
+      ]
     }
-    // 💡 TO ADD A NEW CHAPTER:
-    // Copy a bracket block above, paste it right here, add a comma, and update the values!
+    // 💡 TO ADD A NEW CHAPTER: copy a block above, paste it here, add a comma, update values.
   ];
 
   // ==========================================

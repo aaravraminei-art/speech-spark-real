@@ -4,8 +4,9 @@ import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { Phone, CheckCircle, Send } from "lucide-react";
 import { toast } from "sonner";
-// 🔑 Import the official GoogleLogin component
 import { GoogleLogin } from "@react-oauth/google";
+// 1. Import the JWT decoder tool you just installed
+import { jwtDecode } from "jwt-decode";
 
 const heroImage = "https://images.unsplash.com/photo-1522202176988-66273c2fd55f?auto=format&fit=crop&w=1800&q=80";
 
@@ -92,12 +93,28 @@ const HeroSection = () => {
             </div>
 
             <div className="space-y-4">
-              {/* ⚡️ Official Google Sign In Button Container */}
+              {/* Official Google Sign In Button Container */}
               <div className="flex justify-center w-full [&_iframe]:w-full">
                 <GoogleLogin
                   onSuccess={(credentialResponse) => {
-                    console.log("JWT ID Token received:", credentialResponse.credential);
-                    toast.success("Welcome to Speech Spark! Successfully authenticated.");
+                    if (credentialResponse.credential) {
+                      // 2. Decode the secure token from Google
+                      const userData: any = jwtDecode(credentialResponse.credential);
+                      console.log("Full User Data from Google:", userData);
+                      
+                      // 3. Extract the profile pieces
+                      const userEmail = userData.email;
+                      const userName = userData.name;
+
+                      // 4. Autofill the input fields instantly
+                      setFormData((prev) => ({
+                        ...prev,
+                        name: userName || "",
+                        email: userEmail || ""
+                      }));
+
+                      toast.success(`Hey ${userName}, successfully authenticated! We've filled out your name and email.`);
+                    }
                   }}
                   onError={() => {
                     console.error("Google Sign-In failed");

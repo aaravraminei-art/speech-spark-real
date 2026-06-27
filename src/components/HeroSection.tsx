@@ -5,25 +5,66 @@ import { Textarea } from "@/components/ui/textarea";
 import { Phone, CheckCircle, Send } from "lucide-react";
 import { toast } from "sonner";
 import { GoogleLogin } from "@react-oauth/google";
-// 1. Import the JWT decoder tool you just installed
 import { jwtDecode } from "jwt-decode";
 
 const heroImage = "https://images.unsplash.com/photo-1522202176988-66273c2fd55f?auto=format&fit=crop&w=1800&q=80";
+
+// Sample list of local schools (you can edit or add more names to this array)
+const SCHOOL_OPTIONS = [
+  "Longfellow Middle School",
+  "Carson Middle School",
+  "Kilmer Middle School",
+  "Cooper Middle School",
+  "Frost Middle School",
+  "Thomas Jefferson High School (TJHSST)",
+  "McLean High School",
+  "Langley High School",
+  "Oakton High School",
+  "Marshall High School"
+];
 
 const HeroSection = () => {
   const [formData, setFormData] = useState({
     name: "",
     phone: "",
     email: "",
-    grade: "",
+    grade: "",       // Track selected grade
+    school: "",      // Track selected school from dropdown
+    customSchool: "",// Track custom school name if "Other" is picked
     inquiry: "",
     message: ""
   });
 
+  const [isCustomSchool, setIsCustomSchool] = useState(false);
+
+  const handleSchoolChange = (e: React.ChangeEvent<HTMLSelectElement>) => {
+    const value = e.target.value;
+    setFormData({ ...formData, school: value });
+    
+    // If they click "Add School / Other", show the manual input field
+    if (value === "other") {
+      setIsCustomSchool(true);
+    } else {
+      setIsCustomSchool(false);
+    }
+  };
+
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
+    
+    // Determine the final school name to submit
+    const finalSchool = isCustomSchool ? formData.customSchool : formData.school;
+    
+    console.log("Submitting Signup Data:", {
+      ...formData,
+      school: finalSchool
+    });
+
     toast.success("Thanks! Speech Spark will follow up about camp details.");
-    setFormData({ name: "", phone: "", email: "", grade: "", inquiry: "", message: "" });
+    
+    // Reset form
+    setFormData({ name: "", phone: "", email: "", grade: "", school: "", customSchool: "", inquiry: "", message: "" });
+    setIsCustomSchool(false);
   };
 
   return (
@@ -98,15 +139,10 @@ const HeroSection = () => {
                 <GoogleLogin
                   onSuccess={(credentialResponse) => {
                     if (credentialResponse.credential) {
-                      // 2. Decode the secure token from Google
                       const userData: any = jwtDecode(credentialResponse.credential);
-                      console.log("Full User Data from Google:", userData);
-                      
-                      // 3. Extract the profile pieces
                       const userEmail = userData.email;
                       const userName = userData.name;
 
-                      // 4. Autofill the input fields instantly
                       setFormData((prev) => ({
                         ...prev,
                         name: userName || "",
@@ -157,13 +193,51 @@ const HeroSection = () => {
                   required
                   className="h-12"
                 />
-                <Input
-                  placeholder="Current Grade Level & School"
+                
+                {/* 🎓 New Grade Dropdown Selector */}
+                <select
                   value={formData.grade}
                   onChange={(e) => setFormData({ ...formData, grade: e.target.value })}
                   required
-                  className="h-12"
-                />
+                  className="h-12 w-full rounded-md border border-input bg-background px-3 py-2 text-sm text-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring"
+                >
+                  <option value="">Select Grade Level</option>
+                  <option value="4th">4th Grade</option>
+                  <option value="5th">5th Grade</option>
+                  <option value="6th">6th Grade</option>
+                  <option value="7th">7th Grade</option>
+                  <option value="8th">8th Grade</option>
+                  <option value="9th">9th Grade</option>
+                  <option value="10th">10th Grade</option>
+                  <option value="11th">11th Grade</option>
+                  <option value="12th">12th Grade</option>
+                </select>
+
+                {/* 🏫 New School Dropdown Selector */}
+                <select
+                  value={formData.school}
+                  onChange={handleSchoolChange}
+                  required
+                  className="h-12 w-full rounded-md border border-input bg-background px-3 py-2 text-sm text-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring"
+                >
+                  <option value="">Select Middle or High School</option>
+                  {SCHOOL_OPTIONS.map((school) => (
+                    <option key={school} value={school}>{school}</option>
+                  ))}
+                  <option value="other">➕ Add School / Other</option>
+                </select>
+
+                {/* 📝 Hidden Text field that pops up ONLY if "Other" is chosen */}
+                {isCustomSchool && (
+                  <Input
+                    placeholder="Type Name of School"
+                    value={formData.customSchool}
+                    onChange={(e) => setFormData({ ...formData, customSchool: e.target.value })}
+                    required
+                    className="h-12 border-accent/50 focus-visible:ring-accent animate-fade-in"
+                  />
+                )}
+
                 <select
                   value={formData.inquiry}
                   onChange={(e) => setFormData({ ...formData, inquiry: e.target.value })}
@@ -175,6 +249,7 @@ const HeroSection = () => {
                   <option value="school">School / Educator Inquiry</option>
                   <option value="pta">PTA / Partner Inquiry</option>
                 </select>
+                
                 <Textarea
                   placeholder="Please describe any prior debate experience, preferred camp dates, or key questions."
                   value={formData.message}
@@ -182,6 +257,7 @@ const HeroSection = () => {
                   rows={3}
                   required
                 />
+                
                 <Button type="submit" variant="accent" size="lg" className="w-full">
                   <Send className="h-5 w-5" />
                   Submit Free Camp Interest

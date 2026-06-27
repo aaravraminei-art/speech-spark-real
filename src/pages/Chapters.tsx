@@ -127,7 +127,7 @@ const ChaptersPage = () => {
               Our Chapters
             </h1>
             <p className="text-lg text-muted-foreground leading-relaxed">
-              Speech Spark currently operates four active chapters in Northern Virginia, with plans to grow.
+              Speech Spark currently operates five active chapters in Northern Virginia, with plans to grow.
             </p>
           </div>
         </section>

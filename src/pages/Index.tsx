@@ -64,26 +64,25 @@ const Index = () => {
         <WhyUsSection />
         <GallerySection />
 
-        {/* 1-on-1 Tutoring + Payment */}
+        {/* Email Notifications + Payment */}
         <section className="section-padding bg-muted/20 border-y border-border/40">
           <div className="container-custom max-w-5xl">
             <div className="grid md:grid-cols-2 gap-6">
-              {/* Tutoring sign-up */}
+              {/* Email signup */}
               <div className="card-elevated p-8 md:p-10 flex flex-col">
                 <div className="w-12 h-12 rounded-xl bg-accent/10 text-accent flex items-center justify-center mb-5">
-                  <GraduationCap className="h-6 w-6" />
+                  <Bell className="h-6 w-6" />
                 </div>
                 <h3 className="text-2xl font-extrabold font-display text-foreground mb-3">
-                  One-on-One Tutoring
+                  Stay in the Loop
                 </h3>
                 <p className="text-muted-foreground leading-relaxed mb-6 flex-1">
-                  Want personalized coaching? Sign up for private 1-on-1 tutoring with one
-                  of our experienced student coaches. We'll tailor sessions to your goals —
-                  speech writing, delivery, debate strategy, and more.
+                  Want event updates, camp announcements, and chapter news? Drop your email
+                  and we'll keep you connected with everything happening at Speech Spark.
                 </p>
-                <a href={tutoringFormLink} target="_blank" rel="noopener noreferrer">
+                <a href={emailSignupFormLink} target="_blank" rel="noopener noreferrer">
                   <Button variant="accent" className="w-full font-bold">
-                    Sign Up for Tutoring <ArrowRight className="ml-1.5 h-4 w-4" />
+                    Get Email Updates <ArrowRight className="ml-1.5 h-4 w-4" />
                   </Button>
                 </a>
               </div>

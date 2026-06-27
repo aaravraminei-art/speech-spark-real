@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-import { GraduationCap, CreditCard, Phone, Mail, Instagram, ArrowRight, Heart } from "lucide-react";
+import { Mail, Bell, CreditCard, Phone, Instagram, ArrowRight, Heart } from "lucide-react";
 import Header from "@/components/Header";
 import HeroSection from "@/components/HeroSection";
 import TrustBadges from "@/components/TrustBadges";
@@ -13,8 +13,8 @@ import { Button } from "@/components/ui/button";
 const Index = () => {
   // 💡 Replace this link with your real payment URL (Venmo / Stripe / PayPal)
   const paymentLink = "https://venmo.com/";
-  // 💡 Replace with your 1-on-1 tutoring signup Google Form
-  const tutoringFormLink = "https://forms.gle/QuUSh2uAfCKc61mD6";
+  // 💡 Replace with your email signup Google Form so visitors get event notifications & updates
+  const emailSignupFormLink = "https://forms.gle/QuUSh2uAfCKc61mD6";
 
   const stats = [
     { stat: "250+", label: "Students Reached" },

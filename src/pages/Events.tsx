@@ -64,8 +64,9 @@ const EventsPage = () => {
   // ==========================================
   // 🕒 EDIT OR ADD PAST EVENTS HERE
   // ==========================================
-  const pastEvents = [
-    // Leave this empty for now just like the old site, or add items here later using the exact same format as above!
+  // 💡 To add a past event, copy this template and uncomment:
+  // { month: "MAY", day: "10", year: "2026", title: "Spring Showcase", description: "Recap text", image: "/path-to-photo.jpg" }
+  const pastEvents: Array<{ month: string; day: string; year: string; title: string; description: string; image?: string }> = [
   ];
 
   return (

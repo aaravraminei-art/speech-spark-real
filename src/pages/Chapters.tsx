@@ -186,14 +186,49 @@ const ChaptersPage = () => {
                       </h4>
                       <div className="flex flex-wrap gap-1.5">
                         {chapter.activities.map((tag, idx) => (
-                          <span 
-                            key={idx} 
+                          <span
+                            key={idx}
                             className="bg-background text-foreground border border-border px-2.5 py-0.5 rounded-full text-xs font-medium shadow-2xs"
                           >
                             {tag}
                           </span>
                         ))}
                       </div>
+                    </div>
+
+                    {/* Members preview */}
+                    <div className="space-y-2.5">
+                      <h4 className="text-xs font-black tracking-wider text-foreground uppercase flex items-center gap-1.5">
+                        <Users className="h-3.5 w-3.5 text-accent" /> Chapter Members
+                      </h4>
+                      <div className="grid grid-cols-4 gap-3">
+                        {chapter.members.map((m, idx) => (
+                          <div key={idx} className="text-center">
+                            <div className="aspect-square rounded-full bg-muted border border-border overflow-hidden flex items-center justify-center mb-1.5">
+                              {m.image ? (
+                                <img src={m.image} alt={m.name} className="w-full h-full object-cover" />
+                              ) : (
+                                <span className="text-xs font-bold text-muted-foreground/60">Photo</span>
+                              )}
+                            </div>
+                            <span className="block text-[10px] text-muted-foreground truncate">{m.name}</span>
+                          </div>
+                        ))}
+                      </div>
+                    </div>
+
+                    {/* Action buttons */}
+                    <div className="flex flex-col sm:flex-row gap-2 pt-2 border-t border-border/40">
+                      <a href={chapter.joinFormLink} target="_blank" rel="noopener noreferrer" className="flex-1">
+                        <Button variant="accent" size="sm" className="w-full font-bold">
+                          Join this Chapter <ArrowRight className="ml-1.5 h-4 w-4" />
+                        </Button>
+                      </a>
+                      <a href="/events" className="flex-1">
+                        <Button variant="outline" size="sm" className="w-full font-bold">
+                          View Events
+                        </Button>
+                      </a>
                     </div>
                   </div>
                 </div>

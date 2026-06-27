@@ -19,7 +19,7 @@ const EventsPage = () => {
       title: "Debate Summer Camp",
       chapter: "Brambleton Library (Eagle Ridge Chapter)",
       time: "2:00 PM - 4:00 PM daily",
-      description: "Five days of hands-on debate and public speaking at Brambleton Library, run by competitive student mentors from Thomas Jefferson High School for Science and Technology (TJHSST). Open to anyone in grades 6 through 8. No experience needed at all.",
+      description: "Five days of hands-on debate and public speaking at Brambleton Library, run by competitive student mentors from Thomas Jefferson High School for Science and Technology (TJHSST). Open to anyone in grades 4 through 9. No experience needed at all.",
       expectations: [
         "Public speaking fundamentals",
         "Debate formats & strategy",

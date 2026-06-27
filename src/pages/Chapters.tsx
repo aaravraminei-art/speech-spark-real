@@ -14,7 +14,7 @@ const ChaptersPage = () => {
       name: "Rock Ridge",
       location: "Ashburn, Virginia",
       meetings: "Meets regularly during the school year. Check the Events page for upcoming dates.",
-      openTo: "All middle school students (grades 6–8)",
+      openTo: "Students in grades 4–9",
       activities: ["Speech Workshops", "Internal Showcases", "Peer Coaching", "Debate Practice", "Impromptu Speaking"]
     },
     {
@@ -22,7 +22,7 @@ const ChaptersPage = () => {
       name: "South Riding",
       location: "South Riding, Virginia",
       meetings: "Meets regularly during the school year. Check the Events page for upcoming dates.",
-      openTo: "All middle school students (grades 6–8)",
+      openTo: "Students in grades 4–9",
       activities: ["Speech Workshops", "Internal Showcases", "Peer Coaching", "Debate Practice", "Impromptu Speaking"]
     },
     {
@@ -30,7 +30,7 @@ const ChaptersPage = () => {
       name: "Chantilly",
       location: "Chantilly, Virginia",
       meetings: "Meets regularly during the school year. Check the Events page for upcoming dates.",
-      openTo: "All middle school students (grades 6–8)",
+      openTo: "Students in grades 4–9",
       activities: ["Speech Workshops", "Internal Showcases", "Peer Coaching", "Debate Practice", "Impromptu Speaking"]
     },
     {
@@ -38,7 +38,7 @@ const ChaptersPage = () => {
       name: "McLean",
       location: "McLean, Virginia",
       meetings: "Meets regularly during the school year. Check the Events page for upcoming dates.",
-      openTo: "All middle school students (grades 6–8)",
+      openTo: "Students in grades 4–9",
       activities: ["Speech Workshops", "Internal Showcases", "Peer Coaching", "Debate Practice", "Impromptu Speaking"]
     }
     // 💡 TO ADD A NEW CHAPTER:
@@ -164,7 +164,7 @@ const ChaptersPage = () => {
                 Don't See Your Area?
               </h3>
               <p className="text-muted-foreground max-w-xl mx-auto text-sm md:text-base leading-relaxed mb-10">
-                Speech Spark is growing! If you're a high schooler passionate about public speaking and want to bring a chapter to a middle school near you, we want to hear from you.
+                Speech Spark is growing! If you're a high schooler passionate about public speaking and want to bring a chapter to a school near you, we want to hear from you.
               </p>
 
               {/* Reverted Workflow Steps Layout */}

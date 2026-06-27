@@ -51,7 +51,7 @@ const ServicesSection = () => {
             Debate formats we teach
           </h2>
           <p className="text-lg text-muted-foreground">
-  Speech Spark brings elite speech and debate training to middle schoolers. Led by competitive debaters from Thomas Jefferson High School for Science and Technology (TJHSST), we bridge the gap between middle school confidence and high school academic readiness.
+  Speech Spark brings elite speech and debate training to students. Led by competitive debaters from Thomas Jefferson High School for Science and Technology (TJHSST), we bridge the gap between early speaking confidence and high school academic readiness.
           </p>
         </div>
 

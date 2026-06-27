@@ -14,7 +14,7 @@ const faqs = [
   },
   {
     question: "What are the age requirements?",
-    answer: "6th, 7th, and 8th grade. The curriculum is made for absolute beginners as well as students who already compete in middle school circuits."
+    answer: "4th through 9th grade. The curriculum is made for absolute beginners as well as students who already compete in local circuits."
   },
   {
     question: "Do students need debate experience to join?",
@@ -22,7 +22,7 @@ const faqs = [
   },
   {
     question: "Where are camps held?",
-    answer: "Our current camps involve weekly 1-2 hour sessions both online and at partner middle schools across the area. If your school isn't on our list yet, have an administrator or PTA contact us - we set up new sites every season."
+    answer: "Our current camps involve weekly 1-2 hour sessions both online and at partner schools across the area. If your school isn't on our list yet, have an administrator or PTA contact us - we set up new sites every season."
   },
   {
     question: "Who are the coaches?",
@@ -46,7 +46,7 @@ const FAQSection = () => {
               Frequently Asked Questions
             </h2>
             <p className="text-lg text-muted-foreground mb-8">
-              Questions from families, students, schools, and PTAs about the free middle school debate program.
+              Questions from families, students, schools, and PTAs about the free debate program for grades 4–9.
             </p>
             
             <div className="bg-card rounded-xl p-6 shadow-lg border border-border">

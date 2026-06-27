@@ -3,8 +3,8 @@ import { Award, BookOpen, Clock, Mic2, School, Users } from "lucide-react";
 const badges = [
   {
     icon: School,
-    value: "6-8",
-    label: "Middle School",
+    value: "4–9",
+    label: "Grades",
     subtext: "Beginner-friendly"
   },
   {

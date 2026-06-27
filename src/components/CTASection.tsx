@@ -12,7 +12,7 @@ const CTASection = () => {
               Bring Speech Spark to your school.
             </h2>
             <p className="text-xl text-accent-foreground/90 mb-8">
-              We are planning free 1-2 hour in-person summer debate camps at middle schools, with small groups, mock rounds, and beginner-friendly coaching.
+              We are planning free 1-2 hour in-person summer debate camps at partner schools, with small groups, mock rounds, and beginner-friendly coaching.
             </p>
 
             <div className="flex flex-wrap gap-4">
@@ -57,7 +57,7 @@ const CTASection = () => {
                 </div>
                 <div>
                   <p className="font-semibold text-lg">FILL IN SCHOOL / CAMP SITE HERE</p>
-                  <p className="text-accent-foreground/75">Partner middle schools across the area</p>
+                  <p className="text-accent-foreground/75">Partner schools across Northern Virginia</p>
                 </div>
               </div>
 

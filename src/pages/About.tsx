@@ -18,7 +18,7 @@ const AboutPage = () => {
               Empowering the Next Generation of Thinkers and Speakers
             </h1>
             <p className="text-xl text-muted-foreground font-normal leading-relaxed max-w-2xl mx-auto">
-              A student-led academic nonprofit bridging the gap between middle school fundamentals and elite high school speech, debate, and diplomacy circuits.
+              A student-led academic nonprofit bridging the gap between early fundamentals and elite high school speech, debate, and diplomacy circuits.
             </p>
           </div>
         </section>
@@ -31,7 +31,7 @@ const AboutPage = () => {
                 Our Mission
               </h2>
               <p className="text-lg text-muted-foreground leading-relaxed">
-                Speech Spark demystifies public speaking, making advanced forensics, debate, and model UN accessible to every middle school student. By providing mentorship from competitive high school varsity debaters, we empower students to articulate complex concepts with precision, shifting public speaking from a source of anxiety to an exciting academic advantage.
+                Speech Spark demystifies public speaking, making advanced forensics, debate, and model UN accessible to every student. By providing mentorship from competitive high school varsity debaters, we empower students to articulate complex concepts with precision, shifting public speaking from a source of anxiety to an exciting academic advantage.
               </p>
             </div>
           </div>
@@ -62,7 +62,7 @@ const AboutPage = () => {
                 </div>
                 <div className="space-y-4 text-muted-foreground leading-relaxed">
                   <p>
-                    Speech Spark was established by competitive forensics competitors who recognized a critical gap in early academic preparation. Remembering the intimidation of their own early presentations, they set out to build the supportive community that they wished had existed when they were in middle school.
+                    Speech Spark was established by competitive forensics competitors who recognized a critical gap in early academic preparation. Remembering the intimidation of their own early presentations, they set out to build the supportive community that they wished had existed when they were in earlier school years.
                   </p>
                   <p>
                     What began as a localized after-school workshop has matured into an active nonprofit organization spanning major chapters across Northern Virginia. Every program we operate is entirely student-led, curriculum-driven, and completely free—built upon the core conviction that elite training shouldn't be gated behind high tuition fees.
@@ -156,7 +156,7 @@ const AboutPage = () => {
                   Who can join Speech Spark cohorts?
                 </AccordionTrigger>
                 <AccordionContent className="text-sm text-muted-foreground leading-relaxed pb-4">
-                  Any middle school student in grades 6 through 8 near an active chapter or joining our virtual sessions is welcome. Zero prior experience required.
+                  Any student in grades 4 through 9 near an active chapter or joining our virtual sessions is welcome. Zero prior experience required.
                 </AccordionContent>
               </AccordionItem>
 
@@ -183,7 +183,7 @@ const AboutPage = () => {
                   How can high school students launch a new chapter?
                 </AccordionTrigger>
                 <AccordionContent className="text-sm text-muted-foreground leading-relaxed pb-4">
-                  We are growing our network carefully! High school varsity speech and debate competitors looking to bring a chapter to their local middle schools can apply using our form on the Chapters page.
+                  We are growing our network carefully! High school varsity speech and debate competitors looking to bring a chapter to their local schools can apply using our form on the Chapters page.
                 </AccordionContent>
               </AccordionItem>
             </Accordion>

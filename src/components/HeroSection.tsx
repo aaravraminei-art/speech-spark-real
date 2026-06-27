@@ -4,6 +4,8 @@ import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { Phone, CheckCircle, Send } from "lucide-react";
 import { toast } from "sonner";
+// 🔑 Import the official GoogleLogin component
+import { GoogleLogin } from "@react-oauth/google";
 
 const heroImage = "https://images.unsplash.com/photo-1522202176988-66273c2fd55f?auto=format&fit=crop&w=1800&q=80";
 
@@ -67,7 +69,7 @@ const HeroSection = () => {
               <a href="tel:5713891747">
                 <Button variant="hero" size="xl">
                   <Phone className="h-5 w-5" />
-                  5713891747
+                  571-389-1747
                 </Button>
               </a>
               <a href="#services">
@@ -79,91 +81,98 @@ const HeroSection = () => {
           </div>
 
           {/* Right - Form */}
-          <div id="contact-form" className="card-elevated p-8 animate-fade-up" style={{ animationDelay: "0.2s" }}>
+          <div id="contact-form" className="card-elevated p-8 animate-fade-up bg-card rounded-2xl border border-border" style={{ animationDelay: "0.2s" }}>
             <div className="text-center mb-6">
               <h2 className="text-2xl font-bold font-display text-foreground mb-2">
                 Sign Up Here
               </h2>
-              <p className="text-muted-foreground">
-                FILL IN CAMP / SCHOOL INFORMATION HERE
+              <p className="text-sm text-muted-foreground">
+                Register your student or submit a school program inquiry
               </p>
             </div>
 
-            <form onSubmit={handleSubmit} className="space-y-4">
-              <Button
-                type="button"
-                variant="outline"
-                size="lg"
-                className="w-full"
-                onClick={() => toast.info("Google sign-in setup goes here.")}
-              >
-                <span className="flex h-5 w-5 items-center justify-center rounded-full bg-white text-sm font-bold text-foreground border border-border">
-                  G
-                </span>
-                Continue with Google
-              </Button>
+            <div className="space-y-4">
+              {/* ⚡️ Official Google Sign In Button Container */}
+              <div className="flex justify-center w-full [&_iframe]:w-full">
+                <GoogleLogin
+                  onSuccess={(credentialResponse) => {
+                    console.log("JWT ID Token received:", credentialResponse.credential);
+                    toast.success("Welcome to Speech Spark! Successfully authenticated.");
+                  }}
+                  onError={() => {
+                    console.error("Google Sign-In failed");
+                    toast.error("Authentication failed. Please try again.");
+                  }}
+                  theme="outline"
+                  size="large"
+                  shape="rectangular"
+                  width="100%"
+                />
+              </div>
 
-              <div className="flex items-center gap-3 text-xs text-muted-foreground">
+              <div className="flex items-center gap-3 text-xs text-muted-foreground py-1">
                 <span className="h-px flex-1 bg-border" />
                 <span>or fill out the form</span>
                 <span className="h-px flex-1 bg-border" />
               </div>
 
-              <Input
-                placeholder="FILL IN STUDENT NAME HERE"
-                value={formData.name}
-                onChange={(e) => setFormData({ ...formData, name: e.target.value })}
-                required
-                className="h-12"
-              />
-              <Input
-                type="tel"
-                placeholder="FILL IN PHONE NUMBER HERE"
-                value={formData.phone}
-                onChange={(e) => setFormData({ ...formData, phone: e.target.value })}
-                required
-                className="h-12"
-              />
-              <Input
-                type="email"
-                placeholder="FILL IN EMAIL ADDRESS HERE"
-                value={formData.email}
-                onChange={(e) => setFormData({ ...formData, email: e.target.value })}
-                required
-                className="h-12"
-              />
-              <Input
-                placeholder="FILL IN GRADE / SCHOOL HERE"
-                value={formData.grade}
-                onChange={(e) => setFormData({ ...formData, grade: e.target.value })}
-                required
-                className="h-12"
-              />
-              <select
-                value={formData.inquiry}
-                onChange={(e) => setFormData({ ...formData, inquiry: e.target.value })}
-                required
-                className="h-12 w-full rounded-md border border-input bg-background px-3 py-2 text-sm ring-offset-background placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2"
-              >
-                <option value="">FILL IN INQUIRY TYPE HERE</option>
-                <option value="student">Student / Family Signup</option>
-                <option value="school">School / Educator Inquiry</option>
-                <option value="pta">PTA / Partner Inquiry</option>
-              </select>
-              <Textarea
-                placeholder="FILL IN DEBATE EXPERIENCE, CAMP DATES, OR SCHOOL CONTACT HERE"
-                value={formData.message}
-                onChange={(e) => setFormData({ ...formData, message: e.target.value })}
-                rows={3}
-                required
-              />
-              <Button type="submit" variant="accent" size="lg" className="w-full">
-                <Send className="h-5 w-5" />
-                Submit Free Camp Interest
-              </Button>
-            </form>
+              <form onSubmit={handleSubmit} className="space-y-4">
+                <Input
+                  placeholder="Student Full Name"
+                  value={formData.name}
+                  onChange={(e) => setFormData({ ...formData, name: e.target.value })}
+                  required
+                  className="h-12"
+                />
+                <Input
+                  type="tel"
+                  placeholder="Parent / Guardian Phone Number"
+                  value={formData.phone}
+                  onChange={(e) => setFormData({ ...formData, phone: e.target.value })}
+                  required
+                  className="h-12"
+                />
+                <Input
+                  type="email"
+                  placeholder="Email Address"
+                  value={formData.email}
+                  onChange={(e) => setFormData({ ...formData, email: e.target.value })}
+                  required
+                  className="h-12"
+                />
+                <Input
+                  placeholder="Current Grade Level & School"
+                  value={formData.grade}
+                  onChange={(e) => setFormData({ ...formData, grade: e.target.value })}
+                  required
+                  className="h-12"
+                />
+                <select
+                  value={formData.inquiry}
+                  onChange={(e) => setFormData({ ...formData, inquiry: e.target.value })}
+                  required
+                  className="h-12 w-full rounded-md border border-input bg-background px-3 py-2 text-sm text-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring"
+                >
+                  <option value="">Select Inquiry Type</option>
+                  <option value="student">Student / Family Signup</option>
+                  <option value="school">School / Educator Inquiry</option>
+                  <option value="pta">PTA / Partner Inquiry</option>
+                </select>
+                <Textarea
+                  placeholder="Please describe any prior debate experience, preferred camp dates, or key questions."
+                  value={formData.message}
+                  onChange={(e) => setFormData({ ...formData, message: e.target.value })}
+                  rows={3}
+                  required
+                />
+                <Button type="submit" variant="accent" size="lg" className="w-full">
+                  <Send className="h-5 w-5" />
+                  Submit Free Camp Interest
+                </Button>
+              </form>
+            </div>
 
-            <p className="text-center text-sm text-muted-foreground mt-4">
+            <p className="text-center text-xs text-muted-foreground mt-4">
               Free program. No tuition, no materials fee, no late charges.
             </p>
           </div>

@@ -30,7 +30,7 @@ const reasons = [
   {
     icon: HeartHandshake,
     title: "We Help Students Go Further",
-    description: "We were once in their position, and our goal is to help middle schoolers reach where we are now and go even further."
+    description: "We were once in their position, and our goal is to help students reach where we are now and go even further."
   }
 ];
 
@@ -52,7 +52,7 @@ const WhyUsSection = () => {
             Why Speech Spark works
           </h2>
           <p className="text-lg text-primary-foreground/80">
-            Debate should not cost thousands to learn. We bring clear, competitive, beginner-friendly coaching directly to middle schools.
+            Debate should not cost thousands to learn. We bring clear, competitive, beginner-friendly coaching directly to schools.
           </p>
         </div>
 

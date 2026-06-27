@@ -19,7 +19,7 @@ const EventsPage = () => {
       title: "Debate Summer Camp",
       chapter: "Brambleton Library (Eagle Ridge Chapter)",
       time: "2:00 PM - 4:00 PM daily",
-      description: "Five days of hands-on debate and public speaking at Brambleton Library, run by competitive student mentors from Thomas Jefferson High School for Science and Technology (TJHSST). Open to anyone in grades 6 through 8. No experience needed at all.",
+      description: "Five days of hands-on debate and public speaking at Brambleton Library, run by competitive student mentors from Thomas Jefferson High School for Science and Technology (TJHSST). Open to anyone in grades 4 through 9. No experience needed at all.",
       expectations: [
         "Public speaking fundamentals",
         "Debate formats & strategy",
@@ -64,8 +64,9 @@ const EventsPage = () => {
   // ==========================================
   // 🕒 EDIT OR ADD PAST EVENTS HERE
   // ==========================================
-  const pastEvents = [
-    // Leave this empty for now just like the old site, or add items here later using the exact same format as above!
+  // 💡 To add a past event, copy this template and uncomment:
+  // { month: "MAY", day: "10", year: "2026", title: "Spring Showcase", description: "Recap text", image: "/path-to-photo.jpg" }
+  const pastEvents: Array<{ month: string; day: string; year: string; title: string; description: string; image?: string }> = [
   ];
 
   return (
@@ -210,13 +211,20 @@ const EventsPage = () => {
               {pastEvents.length > 0 ? (
                 // Past events render exactly the same layout if added to the array
                 pastEvents.map((event, idx) => (
-                  <div key={idx} className="flex flex-col md:flex-row bg-card rounded-2xl border border-border shadow-sm overflow-hidden opacity-80">
-                    <div className="bg-muted/40 md:w-44 flex flex-col justify-center items-center p-6 text-center border-b md:border-b-0 md:border-r border-border min-w-[150px]">
-                      <span className="text-xs font-black text-muted-foreground uppercase">{event.month}</span>
-                      <span className="text-3xl font-black font-display tracking-tight text-muted-foreground my-1">{event.day}</span>
-                      <span className="text-xs font-semibold text-muted-foreground tracking-wider">{event.year}</span>
+                  <div key={idx} className="flex flex-col md:flex-row bg-card rounded-2xl border border-border shadow-sm overflow-hidden opacity-90">
+                    <div className="md:w-56 bg-muted/40 flex items-center justify-center border-b md:border-b-0 md:border-r border-border min-h-[180px]">
+                      {event.image ? (
+                        <img src={event.image} alt={event.title} className="w-full h-full object-cover" />
+                      ) : (
+                        <div className="flex flex-col items-center text-center p-6">
+                          <span className="text-xs font-black text-muted-foreground uppercase">{event.month}</span>
+                          <span className="text-3xl font-black font-display tracking-tight text-muted-foreground my-1">{event.day}</span>
+                          <span className="text-xs font-semibold text-muted-foreground tracking-wider">{event.year}</span>
+                        </div>
+                      )}
                     </div>
                     <div className="flex-1 p-6 md:p-8 space-y-2">
+                      <span className="text-xs font-bold text-accent uppercase tracking-wider">{event.month} {event.day}, {event.year}</span>
                       <h3 className="text-xl font-bold text-foreground">{event.title}</h3>
                       <p className="text-sm text-muted-foreground">{event.description}</p>
                     </div>

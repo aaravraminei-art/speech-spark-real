@@ -71,7 +71,7 @@ const Header = () => {
             </div>
             <div>
               <h1 className="text-xl font-bold font-display">Speech Spark</h1>
-              <p className="text-xs text-primary-foreground/70">Free middle school debate camp</p>
+              <p className="text-xs text-primary-foreground/70">Free debate camps · Grades 4–9</p>
             </div>
           </NavLink>
 

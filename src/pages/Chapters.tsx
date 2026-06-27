@@ -14,35 +14,77 @@ const ChaptersPage = () => {
       name: "Rock Ridge",
       location: "Ashburn, Virginia",
       meetings: "Meets regularly during the school year. Check the Events page for upcoming dates.",
-      openTo: "All middle school students (grades 6–8)",
-      activities: ["Speech Workshops", "Internal Showcases", "Peer Coaching", "Debate Practice", "Impromptu Speaking"]
+      openTo: "Students in grades 4–9",
+      activities: ["Speech Workshops", "Internal Showcases", "Peer Coaching", "Debate Practice", "Impromptu Speaking"],
+      joinFormLink: "https://forms.gle/QuUSh2uAfCKc61mD6",
+      members: [
+        { name: "Member Name", image: "" },
+        { name: "Member Name", image: "" },
+        { name: "Member Name", image: "" },
+        { name: "Member Name", image: "" }
+      ]
     },
     {
       id: "02",
       name: "South Riding",
       location: "South Riding, Virginia",
       meetings: "Meets regularly during the school year. Check the Events page for upcoming dates.",
-      openTo: "All middle school students (grades 6–8)",
-      activities: ["Speech Workshops", "Internal Showcases", "Peer Coaching", "Debate Practice", "Impromptu Speaking"]
+      openTo: "Students in grades 4–9",
+      activities: ["Speech Workshops", "Internal Showcases", "Peer Coaching", "Debate Practice", "Impromptu Speaking"],
+      joinFormLink: "https://forms.gle/QuUSh2uAfCKc61mD6",
+      members: [
+        { name: "Member Name", image: "" },
+        { name: "Member Name", image: "" },
+        { name: "Member Name", image: "" },
+        { name: "Member Name", image: "" }
+      ]
     },
     {
       id: "03",
       name: "Chantilly",
       location: "Chantilly, Virginia",
       meetings: "Meets regularly during the school year. Check the Events page for upcoming dates.",
-      openTo: "All middle school students (grades 6–8)",
-      activities: ["Speech Workshops", "Internal Showcases", "Peer Coaching", "Debate Practice", "Impromptu Speaking"]
+      openTo: "Students in grades 4–9",
+      activities: ["Speech Workshops", "Internal Showcases", "Peer Coaching", "Debate Practice", "Impromptu Speaking"],
+      joinFormLink: "https://forms.gle/QuUSh2uAfCKc61mD6",
+      members: [
+        { name: "Member Name", image: "" },
+        { name: "Member Name", image: "" },
+        { name: "Member Name", image: "" },
+        { name: "Member Name", image: "" }
+      ]
     },
     {
       id: "04",
       name: "McLean",
       location: "McLean, Virginia",
       meetings: "Meets regularly during the school year. Check the Events page for upcoming dates.",
-      openTo: "All middle school students (grades 6–8)",
-      activities: ["Speech Workshops", "Internal Showcases", "Peer Coaching", "Debate Practice", "Impromptu Speaking"]
+      openTo: "Students in grades 4–9",
+      activities: ["Speech Workshops", "Internal Showcases", "Peer Coaching", "Debate Practice", "Impromptu Speaking"],
+      joinFormLink: "https://forms.gle/QuUSh2uAfCKc61mD6",
+      members: [
+        { name: "Member Name", image: "" },
+        { name: "Member Name", image: "" },
+        { name: "Member Name", image: "" },
+        { name: "Member Name", image: "" }
+      ]
+    },
+    {
+      id: "05",
+      name: "Herndon",
+      location: "Herndon, Virginia",
+      meetings: "Meets regularly during the school year. Check the Events page for upcoming dates.",
+      openTo: "Students in grades 4–9",
+      activities: ["Speech Workshops", "Internal Showcases", "Peer Coaching", "Debate Practice", "Impromptu Speaking"],
+      joinFormLink: "https://forms.gle/QuUSh2uAfCKc61mD6",
+      members: [
+        { name: "Member Name", image: "" },
+        { name: "Member Name", image: "" },
+        { name: "Member Name", image: "" },
+        { name: "Member Name", image: "" }
+      ]
     }
-    // 💡 TO ADD A NEW CHAPTER:
-    // Copy a bracket block above, paste it right here, add a comma, and update the values!
+    // 💡 TO ADD A NEW CHAPTER: copy a block above, paste it here, add a comma, update values.
   ];
 
   // ==========================================
@@ -85,7 +127,7 @@ const ChaptersPage = () => {
               Our Chapters
             </h1>
             <p className="text-lg text-muted-foreground leading-relaxed">
-              Speech Spark currently operates four active chapters in Northern Virginia, with plans to grow.
+              Speech Spark currently operates five active chapters in Northern Virginia, with plans to grow.
             </p>
           </div>
         </section>
@@ -144,14 +186,49 @@ const ChaptersPage = () => {
                       </h4>
                       <div className="flex flex-wrap gap-1.5">
                         {chapter.activities.map((tag, idx) => (
-                          <span 
-                            key={idx} 
+                          <span
+                            key={idx}
                             className="bg-background text-foreground border border-border px-2.5 py-0.5 rounded-full text-xs font-medium shadow-2xs"
                           >
                             {tag}
                           </span>
                         ))}
                       </div>
+                    </div>
+
+                    {/* Members preview */}
+                    <div className="space-y-2.5">
+                      <h4 className="text-xs font-black tracking-wider text-foreground uppercase flex items-center gap-1.5">
+                        <Users className="h-3.5 w-3.5 text-accent" /> Chapter Members
+                      </h4>
+                      <div className="grid grid-cols-4 gap-3">
+                        {chapter.members.map((m, idx) => (
+                          <div key={idx} className="text-center">
+                            <div className="aspect-square rounded-full bg-muted border border-border overflow-hidden flex items-center justify-center mb-1.5">
+                              {m.image ? (
+                                <img src={m.image} alt={m.name} className="w-full h-full object-cover" />
+                              ) : (
+                                <span className="text-xs font-bold text-muted-foreground/60">Photo</span>
+                              )}
+                            </div>
+                            <span className="block text-[10px] text-muted-foreground truncate">{m.name}</span>
+                          </div>
+                        ))}
+                      </div>
+                    </div>
+
+                    {/* Action buttons */}
+                    <div className="flex flex-col sm:flex-row gap-2 pt-2 border-t border-border/40">
+                      <a href={chapter.joinFormLink} target="_blank" rel="noopener noreferrer" className="flex-1">
+                        <Button variant="accent" size="sm" className="w-full font-bold">
+                          Join this Chapter <ArrowRight className="ml-1.5 h-4 w-4" />
+                        </Button>
+                      </a>
+                      <a href="/events" className="flex-1">
+                        <Button variant="outline" size="sm" className="w-full font-bold">
+                          View Events
+                        </Button>
+                      </a>
                     </div>
                   </div>
                 </div>
@@ -164,7 +241,7 @@ const ChaptersPage = () => {
                 Don't See Your Area?
               </h3>
               <p className="text-muted-foreground max-w-xl mx-auto text-sm md:text-base leading-relaxed mb-10">
-                Speech Spark is growing! If you're a high schooler passionate about public speaking and want to bring a chapter to a middle school near you, we want to hear from you.
+                Speech Spark is growing! If you're a high schooler passionate about public speaking and want to bring a chapter to a school near you, we want to hear from you.
               </p>
 
               {/* Reverted Workflow Steps Layout */}

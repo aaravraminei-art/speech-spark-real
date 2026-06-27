@@ -19,7 +19,7 @@ const Footer = () => {
               </div>
             </div>
             <p className="text-primary-foreground/75 text-sm mb-4">
-              A non-profit, student-led public speaking and debate program for middle school students in grades 6-8.
+              A non-profit, student-led public speaking and debate program for students in grades 4 through 9.
             </p>
             <div className="flex items-center gap-2">
               <span className="text-warning text-lg">★</span>
@@ -45,10 +45,10 @@ const Footer = () => {
           <div>
             <h4 className="font-bold font-display mb-4">Program Info</h4>
             <ul className="space-y-2 text-sm text-primary-foreground/75">
-              <li>Grades 6-8</li>
+              <li>Grades 4–9</li>
               <li>Free for families</li>
               <li>1-2 hour sessions</li>
-              <li>Partner middle schools</li>
+              <li>Partner schools</li>
               <li>Small-group practice</li>
               <li>Beginner friendly</li>
             </ul>
@@ -68,7 +68,7 @@ const Footer = () => {
               </a>
               <div className="flex items-start gap-3 text-sm text-primary-foreground/75">
                 <MapPin className="h-4 w-4 mt-0.5 flex-shrink-0" />
-                <span>FILL IN SCHOOL / CAMP SITE HERE<br />Partner middle schools</span>
+                <span>FILL IN SCHOOL / CAMP SITE HERE<br />Partner schools</span>
               </div>
             </div>
           </div>

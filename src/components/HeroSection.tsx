@@ -42,16 +42,16 @@ const HeroSection = () => {
           <div className="text-primary-foreground animate-fade-up">
             <div className="inline-flex items-center gap-2 bg-accent/20 backdrop-blur-sm border border-accent/30 rounded-full px-4 py-2 mb-6">
               <span className="w-2 h-2 bg-accent rounded-full animate-pulse" />
-              <span className="text-sm font-medium">Free in-person debate camps for grades 6-8</span>
+              <span className="text-sm font-medium">Free in-person debate camps for grades 4–9</span>
             </div>
             
             <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold font-display mb-6 leading-tight">
-              Middle school debate, taught by{" "}
+              Grades 4–9 debate, taught by{" "}
               <span className="text-accent">students who compete</span>
             </h1>
             
             <p className="text-lg md:text-xl text-primary-foreground/85 mb-8 max-w-xl">
-              Speech Spark brings a free, in-person public speaking and debate program to middle schools, led by varsity debaters and Model UN delegates from TJHSST.
+              Speech Spark brings a free, in-person public speaking and debate program to schools, led by varsity debaters and Model UN delegates from TJHSST.
             </p>
 
             <div className="flex flex-wrap gap-4 mb-8">
